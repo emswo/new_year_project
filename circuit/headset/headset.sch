@@ -14,21 +14,21 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Amplifier_Audio:LM386 U?
+L Amplifier_Audio:LM386 U1
 U 1 1 60C9ECB1
-P 3300 3050
-F 0 "U?" H 3644 3096 50  0000 L CNN
-F 1 "LM386" H 3644 3005 50  0000 L CNN
-F 2 "" H 3400 3150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lm386.pdf" H 3500 3250 50  0001 C CNN
-	1    3300 3050
+P 3200 3050
+F 0 "U1" H 3544 3096 50  0000 L CNN
+F 1 "LM386" H 3544 3005 50  0000 L CNN
+F 2 "" H 3300 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm386.pdf" H 3400 3250 50  0001 C CNN
+	1    3200 3050
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:2SC1815 Q?
+L Transistor_BJT:2SC1815 Q2
 U 1 1 60CA0AA1
 P 4650 3350
-F 0 "Q?" H 4840 3396 50  0000 L CNN
+F 0 "Q2" H 4840 3396 50  0000 L CNN
 F 1 "2SC1815" H 4840 3305 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4850 3275 50  0001 L CIN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 4650 3350 50  0001 L CNN
@@ -36,10 +36,10 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 4
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_BJT:2SC1815 Q?
+L Transistor_BJT:2SC1815 Q1
 U 1 1 60CA2C66
 P 4250 3050
-F 0 "Q?" H 4440 3096 50  0000 L CNN
+F 0 "Q1" H 4440 3096 50  0000 L CNN
 F 1 "2SC1815" H 4440 3005 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4450 2975 50  0001 L CIN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 4250 3050 50  0001 L CNN
@@ -47,9 +47,500 @@ F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 4
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3600 3050 4050 3050
-Wire Wire Line
 	4350 3250 4350 3350
 Wire Wire Line
 	4350 3350 4450 3350
+$Comp
+L power:+5V #PWR0101
+U 1 1 60C9F8E2
+P 4750 2350
+F 0 "#PWR0101" H 4750 2200 50  0001 C CNN
+F 1 "+5V" H 4765 2523 50  0000 C CNN
+F 2 "" H 4750 2350 50  0001 C CNN
+F 3 "" H 4750 2350 50  0001 C CNN
+	1    4750 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0102
+U 1 1 60CA1740
+P 4750 4000
+F 0 "#PWR0102" H 4750 3750 50  0001 C CNN
+F 1 "Earth" H 4750 3850 50  0001 C CNN
+F 2 "" H 4750 4000 50  0001 C CNN
+F 3 "~" H 4750 4000 50  0001 C CNN
+	1    4750 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2850 4350 2700
+Wire Wire Line
+	4350 2700 4750 2700
+Wire Wire Line
+	4750 2350 4750 2400
+Connection ~ 4750 2700
+Wire Wire Line
+	4750 2700 4750 3150
+$Comp
+L Connector:AudioJack3_Ground J1
+U 1 1 60CAE298
+P 2050 3100
+F 0 "J1" H 2032 3425 50  0000 C CNN
+F 1 "AudioJack3_Ground" H 2032 3334 50  0000 C CNN
+F 2 "" H 2050 3100 50  0001 C CNN
+F 3 "~" H 2050 3100 50  0001 C CNN
+	1    2050 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 60CAF46F
+P 3350 3650
+F 0 "R1" V 3145 3650 50  0000 C CNN
+F 1 "100k" V 3236 3650 50  0000 C CNN
+F 2 "" V 3390 3640 50  0001 C CNN
+F 3 "~" H 3350 3650 50  0001 C CNN
+	1    3350 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 60CB6303
+P 2850 3850
+F 0 "R2" H 2918 3896 50  0000 L CNN
+F 1 "1k" H 2918 3805 50  0000 L CNN
+F 2 "" V 2890 3840 50  0001 C CNN
+F 3 "~" H 2850 3850 50  0001 C CNN
+	1    2850 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 3050 3600 3050
+Wire Wire Line
+	3500 3650 3600 3650
+Wire Wire Line
+	3600 3650 3600 3050
+Connection ~ 3600 3050
+Wire Wire Line
+	3600 3050 4050 3050
+Wire Wire Line
+	3200 3650 2850 3650
+Wire Wire Line
+	2850 3650 2850 3700
+Wire Wire Line
+	2850 3650 2850 3150
+Wire Wire Line
+	2850 3150 2900 3150
+Connection ~ 2850 3650
+Wire Wire Line
+	2900 2950 2450 2950
+Wire Wire Line
+	2450 2950 2450 3000
+Wire Wire Line
+	2450 3000 2250 3000
+Wire Wire Line
+	4750 4000 4750 3900
+Wire Wire Line
+	3100 3350 3100 3900
+Wire Wire Line
+	3100 3900 4750 3900
+Wire Wire Line
+	3100 2750 3100 2400
+Wire Wire Line
+	3100 2400 4750 2400
+Connection ~ 4750 2400
+Wire Wire Line
+	4750 2400 4750 2700
+$Comp
+L power:Earth #PWR0103
+U 1 1 60CBA273
+P 2850 4150
+F 0 "#PWR0103" H 2850 3900 50  0001 C CNN
+F 1 "Earth" H 2850 4000 50  0001 C CNN
+F 2 "" H 2850 4150 50  0001 C CNN
+F 3 "~" H 2850 4150 50  0001 C CNN
+	1    2850 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 4150 2850 4000
+$Comp
+L Device:R_US R3
+U 1 1 60CBBCCF
+P 4750 3750
+F 0 "R3" H 4818 3796 50  0000 L CNN
+F 1 "560" H 4818 3705 50  0000 L CNN
+F 2 "" V 4790 3740 50  0001 C CNN
+F 3 "~" H 4750 3750 50  0001 C CNN
+	1    4750 3750
+	1    0    0    -1  
+$EndComp
+Connection ~ 4750 3900
+Wire Wire Line
+	4750 3600 4750 3550
+$Comp
+L Amplifier_Audio:LM386 U2
+U 1 1 60CD9F17
+P 6100 3050
+F 0 "U2" H 6444 3096 50  0000 L CNN
+F 1 "LM386" H 6444 3005 50  0000 L CNN
+F 2 "" H 6200 3150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm386.pdf" H 6300 3250 50  0001 C CNN
+	1    6100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2SC1815 Q4
+U 1 1 60CD9F1D
+P 7550 3350
+F 0 "Q4" H 7740 3396 50  0000 L CNN
+F 1 "2SC1815" H 7740 3305 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7750 3275 50  0001 L CIN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 7550 3350 50  0001 L CNN
+	1    7550 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2SC1815 Q3
+U 1 1 60CD9F23
+P 7150 3050
+F 0 "Q3" H 7340 3096 50  0000 L CNN
+F 1 "2SC1815" H 7340 3005 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7350 2975 50  0001 L CIN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 7150 3050 50  0001 L CNN
+	1    7150 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 3250 7250 3350
+Wire Wire Line
+	7250 3350 7350 3350
+$Comp
+L power:+5V #PWR0104
+U 1 1 60CD9F2B
+P 7650 2350
+F 0 "#PWR0104" H 7650 2200 50  0001 C CNN
+F 1 "+5V" H 7665 2523 50  0000 C CNN
+F 2 "" H 7650 2350 50  0001 C CNN
+F 3 "" H 7650 2350 50  0001 C CNN
+	1    7650 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0105
+U 1 1 60CD9F31
+P 7650 4000
+F 0 "#PWR0105" H 7650 3750 50  0001 C CNN
+F 1 "Earth" H 7650 3850 50  0001 C CNN
+F 2 "" H 7650 4000 50  0001 C CNN
+F 3 "~" H 7650 4000 50  0001 C CNN
+	1    7650 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 2850 7250 2700
+Wire Wire Line
+	7250 2700 7650 2700
+Wire Wire Line
+	7650 2350 7650 2400
+Connection ~ 7650 2700
+Wire Wire Line
+	7650 2700 7650 3150
+$Comp
+L Device:R_US R4
+U 1 1 60CD9F3C
+P 6250 3650
+F 0 "R4" V 6045 3650 50  0000 C CNN
+F 1 "100k" V 6136 3650 50  0000 C CNN
+F 2 "" V 6290 3640 50  0001 C CNN
+F 3 "~" H 6250 3650 50  0001 C CNN
+	1    6250 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R5
+U 1 1 60CD9F42
+P 5750 3850
+F 0 "R5" H 5818 3896 50  0000 L CNN
+F 1 "1k" H 5818 3805 50  0000 L CNN
+F 2 "" V 5790 3840 50  0001 C CNN
+F 3 "~" H 5750 3850 50  0001 C CNN
+	1    5750 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 3050 6500 3050
+Wire Wire Line
+	6400 3650 6500 3650
+Wire Wire Line
+	6500 3650 6500 3050
+Connection ~ 6500 3050
+Wire Wire Line
+	6500 3050 6950 3050
+Wire Wire Line
+	6100 3650 5750 3650
+Wire Wire Line
+	5750 3650 5750 3700
+Wire Wire Line
+	5750 3650 5750 3150
+Wire Wire Line
+	5750 3150 5800 3150
+Connection ~ 5750 3650
+Wire Wire Line
+	5800 2950 5350 2950
+Wire Wire Line
+	5350 2950 5350 3000
+Wire Wire Line
+	7650 4000 7650 3900
+Wire Wire Line
+	6000 3350 6000 3900
+Wire Wire Line
+	6000 3900 7650 3900
+Wire Wire Line
+	6000 2750 6000 2400
+Wire Wire Line
+	6000 2400 7650 2400
+Connection ~ 7650 2400
+Wire Wire Line
+	7650 2400 7650 2700
+$Comp
+L power:Earth #PWR0106
+U 1 1 60CD9F5C
+P 5750 4150
+F 0 "#PWR0106" H 5750 3900 50  0001 C CNN
+F 1 "Earth" H 5750 4000 50  0001 C CNN
+F 2 "" H 5750 4150 50  0001 C CNN
+F 3 "~" H 5750 4150 50  0001 C CNN
+	1    5750 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 4150 5750 4000
+$Comp
+L Device:R_US R6
+U 1 1 60CD9F63
+P 7650 3750
+F 0 "R6" H 7718 3796 50  0000 L CNN
+F 1 "560" H 7718 3705 50  0000 L CNN
+F 2 "" V 7690 3740 50  0001 C CNN
+F 3 "~" H 7650 3750 50  0001 C CNN
+	1    7650 3750
+	1    0    0    -1  
+$EndComp
+Connection ~ 7650 3900
+Wire Wire Line
+	7650 3600 7650 3550
+Wire Wire Line
+	4950 3000 4950 2100
+Wire Wire Line
+	4950 2100 2350 2100
+Wire Wire Line
+	2350 2100 2350 3100
+Wire Wire Line
+	2350 3100 2250 3100
+Wire Wire Line
+	4950 3000 5350 3000
+$Comp
+L Device:Microphone MK1
+U 1 1 60CE9C1A
+P 2250 5350
+F 0 "MK1" V 1983 5350 50  0000 C CNN
+F 1 "Microphone" V 2074 5350 50  0000 C CNN
+F 2 "" V 2250 5450 50  0001 C CNN
+F 3 "~" V 2250 5450 50  0001 C CNN
+	1    2250 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L power:Earth #PWR0107
+U 1 1 60CEBFE3
+P 2050 4150
+F 0 "#PWR0107" H 2050 3900 50  0001 C CNN
+F 1 "Earth" H 2050 4000 50  0001 C CNN
+F 2 "" H 2050 4150 50  0001 C CNN
+F 3 "~" H 2050 4150 50  0001 C CNN
+	1    2050 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 4150 2050 3400
+$Comp
+L Device:Speaker LS1
+U 1 1 60CEE731
+P 9550 3100
+F 0 "LS1" H 9720 3096 50  0000 L CNN
+F 1 "Speaker" H 9720 3005 50  0000 L CNN
+F 2 "" H 9550 2900 50  0001 C CNN
+F 3 "~" H 9540 3050 50  0001 C CNN
+	1    9550 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Speaker LS2
+U 1 1 60CEF0DD
+P 9550 3600
+F 0 "LS2" H 9720 3596 50  0000 L CNN
+F 1 "Speaker" H 9720 3505 50  0000 L CNN
+F 2 "" H 9550 3400 50  0001 C CNN
+F 3 "~" H 9540 3550 50  0001 C CNN
+	1    9550 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 3600 9350 3600
+Connection ~ 7650 3600
+Wire Wire Line
+	9350 3100 8000 3100
+Wire Wire Line
+	8000 3100 8000 2150
+Wire Wire Line
+	8000 2150 5150 2150
+Wire Wire Line
+	5150 2150 5150 3600
+Wire Wire Line
+	5150 3600 4750 3600
+Connection ~ 4750 3600
+$Comp
+L power:Earth #PWR0108
+U 1 1 60CF4EA8
+P 8250 4000
+F 0 "#PWR0108" H 8250 3750 50  0001 C CNN
+F 1 "Earth" H 8250 3850 50  0001 C CNN
+F 2 "" H 8250 4000 50  0001 C CNN
+F 3 "~" H 8250 4000 50  0001 C CNN
+	1    8250 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R7
+U 1 1 60CF62BD
+P 8250 3800
+F 0 "R7" H 8318 3846 50  0000 L CNN
+F 1 "330" H 8318 3755 50  0000 L CNN
+F 2 "" V 8290 3790 50  0001 C CNN
+F 3 "~" H 8250 3800 50  0001 C CNN
+	1    8250 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 3200 8250 3200
+Wire Wire Line
+	8250 3200 8250 3500
+Wire Wire Line
+	8250 3950 8250 4000
+Wire Wire Line
+	9350 3700 8600 3700
+Wire Wire Line
+	8600 3700 8600 3500
+Wire Wire Line
+	8600 3500 8250 3500
+Connection ~ 8250 3500
+Wire Wire Line
+	8250 3500 8250 3650
+$Comp
+L Transistor_BJT:2SC1815 Q6
+U 1 1 60CFFF25
+P 3500 5650
+F 0 "Q6" H 3690 5696 50  0000 L CNN
+F 1 "2SC1815" H 3690 5605 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3700 5575 50  0001 L CIN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 3500 5650 50  0001 L CNN
+	1    3500 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:2SC1815 Q5
+U 1 1 60CFFF2B
+P 3100 5350
+F 0 "Q5" H 3290 5396 50  0000 L CNN
+F 1 "2SC1815" H 3290 5305 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3300 5275 50  0001 L CIN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Toshiba%20PDFs/2SC1815.pdf" H 3100 5350 50  0001 L CNN
+	1    3100 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 5550 3200 5650
+Wire Wire Line
+	3200 5650 3300 5650
+$Comp
+L power:Earth #PWR0109
+U 1 1 60CFFF33
+P 3600 6300
+F 0 "#PWR0109" H 3600 6050 50  0001 C CNN
+F 1 "Earth" H 3600 6150 50  0001 C CNN
+F 2 "" H 3600 6300 50  0001 C CNN
+F 3 "~" H 3600 6300 50  0001 C CNN
+	1    3600 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 5150 3200 5000
+Wire Wire Line
+	3200 5000 3600 5000
+Connection ~ 3600 5000
+Wire Wire Line
+	3600 5000 3600 5450
+Wire Wire Line
+	2450 5350 2900 5350
+Wire Wire Line
+	3600 6300 3600 6200
+Wire Wire Line
+	1950 6200 3600 6200
+Wire Wire Line
+	3600 4700 3600 5000
+$Comp
+L Device:R_US R8
+U 1 1 60CFFF41
+P 3600 6050
+F 0 "R8" H 3668 6096 50  0000 L CNN
+F 1 "560" H 3668 6005 50  0000 L CNN
+F 2 "" V 3640 6040 50  0001 C CNN
+F 3 "~" H 3600 6050 50  0001 C CNN
+	1    3600 6050
+	1    0    0    -1  
+$EndComp
+Connection ~ 3600 6200
+Wire Wire Line
+	3600 5900 3600 5850
+Connection ~ 3600 5900
+Wire Wire Line
+	1950 6200 1950 5350
+Wire Wire Line
+	1950 5350 2050 5350
+$Comp
+L power:+5V #PWR0110
+U 1 1 60D13F82
+P 3600 4700
+F 0 "#PWR0110" H 3600 4550 50  0001 C CNN
+F 1 "+5V" H 3615 4873 50  0000 C CNN
+F 2 "" H 3600 4700 50  0001 C CNN
+F 3 "" H 3600 4700 50  0001 C CNN
+	1    3600 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 5900 4150 4400
+Wire Wire Line
+	4150 4400 2500 4400
+Wire Wire Line
+	2500 4400 2500 3200
+Wire Wire Line
+	2500 3200 2250 3200
+Wire Wire Line
+	3600 5900 4150 5900
+Text Notes 7100 7100 0    394  ~ 0
+Headset
+Text Notes 7400 7500 0    79   ~ 0
+headset
+Text Notes 8150 7650 0    39   ~ 0
+2021-06-16
+Text Notes 10600 7650 0    39   ~ 0
+0.0.1
+NoConn ~ 3200 2750
+NoConn ~ 3200 3350
+NoConn ~ 3300 3350
+NoConn ~ 6100 2750
+NoConn ~ 6100 3350
+NoConn ~ 6200 3350
 $EndSCHEMATC
