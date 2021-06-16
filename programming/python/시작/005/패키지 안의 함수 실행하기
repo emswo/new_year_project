@@ -1,0 +1,16 @@
+import game.sound.echo
+game.sound.echo.echo_test()
+
+from game.sound import echo
+echo.echo_test()
+
+from game.sound.echo import echo_test
+echo_test()
+
+#컴파일 오류
+import game
+game.sound.echo.echo_test()
+#오류2
+import game.sound.echo.echo_test
+
+
